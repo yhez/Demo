@@ -3,20 +3,21 @@ package specular.systems.demo.app;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MotionEvent;
 import android.widget.TextView;
 
 import static android.graphics.Typeface.createFromAsset;
 
 
 public class ToastCostume extends Activity {
-    View v;
+    TextView v;
     @Override
     public void onCreate(Bundle b){
         super.onCreate(b);
         setContentView(R.layout.toast);
-        v = findViewById(R.id.text);
-        ((TextView)v).setTypeface(createFromAsset(getAssets(), "OpenSans-Light.ttf"));
+        v = (TextView)findViewById(R.id.text);
+        v.setText(getIntent().getAction());
+        v.setTypeface(createFromAsset(getAssets(), "OpenSans-Light.ttf"));
         v.animate().setDuration(500).alpha(1).start();
         new AsyncTask<Void, Void, Void>() {
             @Override
@@ -40,5 +41,10 @@ public class ToastCostume extends Activity {
                 }).start();
             }
         }.execute();
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+        finish();
+        return super.onTouchEvent(event);
     }
 }

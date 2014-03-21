@@ -68,7 +68,9 @@ public class Deposit extends BaseActivity {
                     public void run() {
                         ((AnimationDrawable)iv.getDrawable()).stop();
                         iv.animate().alpha(0).setDuration(1000).start();
-                        startActivity(new Intent(Deposit.this,ToastCostume.class));
+                        Intent i = new Intent(Deposit.this,ToastCostume.class);
+                        i.setAction(getString(R.string.action_done));
+                        startActivity(i);
                     }
                 },3000);
             } else {
