@@ -41,6 +41,10 @@
             android:label="@string/title_activity_deposit"
             android:theme="@style/FullscreenTheme" >
         </activity>
+        <activity android:name=".ToastCostume"
+            android:theme="@style/Theme.Transparent"
+            android:noHistory="true"
+            android:excludeFromRecents="true"/>
     </application>
 
 </manifest>

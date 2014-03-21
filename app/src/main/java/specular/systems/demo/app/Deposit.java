@@ -68,9 +68,9 @@ public class Deposit extends BaseActivity {
                     public void run() {
                         ((AnimationDrawable)iv.getDrawable()).stop();
                         iv.animate().alpha(0).setDuration(1000).start();
-                        Toast.makeText(Deposit.this,"Action completed successfully and securely",Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Deposit.this,ToastCostume.class));
                     }
-                },6000);
+                },3000);
             } else {
                 Toast.makeText(this, "The wearable doesn't match", Toast.LENGTH_LONG).show();
             }
