@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ZenKey</string>
+    <string name="app_name">zenkey</string>
     <string name="company">\@ specularX 2014</string>
-    <string name="content">Secure, Intuitive AUTHENTICATION, AUTHORIZATION &amp; DATA PROTECTION</string>
-    <string name="title_activity_fullscreen_activity3">USER LOGGED IN</string>
-    <string name="title_activity_fullscreen_activity4">Secure Authentication</string>
-    <string name="title_activity_deposit">Secure Transaction Approval</string>
-    <string name="deposit">DEPOSIT</string>
+    <string name="content">Secure, Intuitive Authentication, Authorization &amp; Data Protection</string>
+    <string name="title_activity_fullscreen_activity3">User logged in</string>
+    <string name="title_activity_fullscreen_activity4">Secure authentication powered by zenkey</string>
+    <string name="title_activity_deposit">Secure transaction approval</string>
+    <string name="deposit">Deposit</string>
 
 </resources>
