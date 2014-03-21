@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:id="@+id/fullscreen_content"
+    android:fitsSystemWindows="true"
+    tools:context="specular.systems.demo.app.AfterSign">
+
+    <ImageButton
+        android:onClick="onClick"
+        android:id="@+id/account"
+        android:scaleType="center"
+        android:background="@drawable/after_sign"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null" />
+</FrameLayout>

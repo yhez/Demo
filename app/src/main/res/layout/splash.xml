@@ -1,0 +1,63 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="specular.systems.demo.app.Splash">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_weight="1"
+        android:id="@+id/fullscreen_content"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_height="match_parent">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/lo"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:contentDescription="@null" />
+     </LinearLayout>
+
+    <TextView
+        android:id="@+id/text"
+        android:padding="16dp"
+        android:layout_weight="1"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:textColor="@android:color/black"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:text="@string/content" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/company"
+        android:paddingBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/company" />
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

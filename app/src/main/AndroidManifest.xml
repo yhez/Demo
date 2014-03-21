@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="specular.systems.demo.app" >
+
+    <uses-permission android:name="android.permission.NFC" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="specular.systems.demo.app.Splash"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="specular.systems.demo.app.AfterSign"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen_activity3"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name="specular.systems.demo.app.WfDemo"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen_activity4"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:screenOrientation="landscape"
+            android:name="specular.systems.demo.app.Deposit"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_deposit"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+    </application>
+
+</manifest>
