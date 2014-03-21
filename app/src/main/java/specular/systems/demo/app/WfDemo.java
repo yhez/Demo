@@ -68,14 +68,14 @@ public class WfDemo extends BaseActivity {
                 Log.e("n",nfcContent+"");
                 if(kd!=null&&kd.getDialog()!=null)
                     kd.getDialog().cancel();
-                Toast t = Toast.makeText(this,"Can't find a valid user on this nfc",Toast.LENGTH_SHORT);
+                Toast t = Toast.makeText(this,"Can't find a valid user on this wearable",Toast.LENGTH_SHORT);
                 t.setGravity(Gravity.CENTER,0,0);
                 t.show();
             }
         }
     }
     public void signOn(View v) {
-        Toast t = Toast.makeText(this, "Wrong Username or password\nTry using your NFC Tag", Toast.LENGTH_SHORT);
+        Toast t = Toast.makeText(this, "Wrong username or password\nTry using your wearable", Toast.LENGTH_SHORT);
         t.setGravity(Gravity.CENTER, 0, 0);
         t.show();
     }
