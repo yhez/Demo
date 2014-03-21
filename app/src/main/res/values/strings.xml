@@ -8,5 +8,10 @@
     <string name="title_activity_fullscreen_activity4">Secure authentication powered by zenkey</string>
     <string name="title_activity_deposit">Secure transaction approval</string>
     <string name="deposit">Deposit</string>
+    <string name="title_secure">Online Security Guarantee</string>
+    <string name="hint_name">Online Username</string>
+    <string name="hint_pass">Online Password</string>
+    <string name="sign_bt">Sign On</string>
+    <string name="action_done">Action completed successfully and securely</string>
 
 </resources>

@@ -9,9 +9,55 @@
     <ImageView
         android:id="@+id/fullscreen_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/background"
+        android:src="@drawable/for_demo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@null" />
+    <LinearLayout
+        android:alpha="0.9"
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:background="@drawable/signon_module"
+        android:layout_gravity="right"
+        android:layout_marginTop="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_width="175dp"
+        android:layout_height="160dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:padding="8dp"
+                android:src="@drawable/security"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null" />
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:textSize="11sp"
+                android:textColor="@android:color/black"
+                android:text="@string/title_secure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="SmallSp" />
+            </LinearLayout>
+        <EditText
+            android:hint="@string/hint_name"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:hint="@string/hint_pass"
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:onClick="signOn"
+            android:layout_gravity="right"
+            android:text="@string/sign_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </FrameLayout>
