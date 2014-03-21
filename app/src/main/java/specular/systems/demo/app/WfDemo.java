@@ -12,9 +12,7 @@ import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,16 +66,12 @@ public class WfDemo extends BaseActivity {
                 Log.e("n",nfcContent+"");
                 if(kd!=null&&kd.getDialog()!=null)
                     kd.getDialog().cancel();
-                Toast t = Toast.makeText(this,"Can't find a valid user on this wearable",Toast.LENGTH_SHORT);
-                t.setGravity(Gravity.CENTER,0,0);
-                t.show();
+                Toast.toast("Can't find a valid user on this wearable", 2, this);
             }
         }
     }
     public void signOn(View v) {
-        Toast t = Toast.makeText(this, "Wrong username or password\nTry using your wearable", Toast.LENGTH_SHORT);
-        t.setGravity(Gravity.CENTER, 0, 0);
-        t.show();
+        Toast.toast("Wrong username or password\nTry using your wearable", 2, this);
     }
 
     public class keyDialog extends DialogFragment {

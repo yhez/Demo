@@ -1,6 +1,7 @@
 package specular.systems.demo.app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -9,14 +10,16 @@ import android.widget.TextView;
 import static android.graphics.Typeface.createFromAsset;
 
 
-public class ToastCostume extends Activity {
+public class Toast extends Activity {
     TextView v;
+    static long tTime;
+    static String msg;
     @Override
     public void onCreate(Bundle b){
         super.onCreate(b);
         setContentView(R.layout.toast);
         v = (TextView)findViewById(R.id.text);
-        v.setText(getIntent().getAction());
+        v.setText(msg);
         v.setTypeface(createFromAsset(getAssets(), "OpenSans-Light.ttf"));
         v.animate().setDuration(500).alpha(1).start();
         new AsyncTask<Void, Void, Void>() {
@@ -24,7 +27,7 @@ public class ToastCostume extends Activity {
             protected Void doInBackground(Void... params) {
                 synchronized (this) {
                     try {
-                        wait(6000);
+                        wait(tTime);
                     } catch (Exception ignore) {
                         ignore.printStackTrace();
                     }
@@ -46,5 +49,11 @@ public class ToastCostume extends Activity {
     public boolean onTouchEvent(MotionEvent event){
         finish();
         return super.onTouchEvent(event);
+    }
+    public static void toast(String message,int time,Activity a){
+        tTime = time*1000;
+        msg = message;
+        Intent i = new Intent(a,Toast.class);
+        a.startActivity(i);
     }
 }

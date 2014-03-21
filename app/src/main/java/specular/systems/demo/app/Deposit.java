@@ -10,7 +10,6 @@ import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 
 public class Deposit extends BaseActivity {
@@ -25,7 +24,7 @@ public class Deposit extends BaseActivity {
         c = getIntent().getCharExtra("user", 'x');
         setTitle(getTitle() + " - Hello " + (c == 'U' ? "John" : "Lisa"));
         set(findViewById(R.id.fullscreen_content));
-        Toast.makeText(this, "Tap wearable to approve transaction", Toast.LENGTH_LONG).show();
+        Toast.toast("Tap wearable to approve transaction", 3, this);
     }
 
     @Override
@@ -68,13 +67,11 @@ public class Deposit extends BaseActivity {
                     public void run() {
                         ((AnimationDrawable)iv.getDrawable()).stop();
                         iv.animate().alpha(0).setDuration(1000).start();
-                        Intent i = new Intent(Deposit.this,ToastCostume.class);
-                        i.setAction(getString(R.string.action_done));
-                        startActivity(i);
+                        Toast.toast(getString(R.string.action_done), 6, Deposit.this);
                     }
                 },3000);
             } else {
-                Toast.makeText(this, "The wearable doesn't match", Toast.LENGTH_LONG).show();
+                Toast.toast("The wearable doesn't match", 3, this);
             }
         }
     }
