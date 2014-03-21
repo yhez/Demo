@@ -68,7 +68,7 @@ public class Deposit extends BaseActivity {
                     public void run() {
                         ((AnimationDrawable)iv.getDrawable()).stop();
                         iv.animate().alpha(0).setDuration(1000).start();
-                        Toast.makeText(Deposit.this,"Action completed successfully & securely",Toast.LENGTH_LONG).show();
+                        Toast.makeText(Deposit.this,"Action completed successfully and securely",Toast.LENGTH_LONG).show();
                     }
                 },6000);
             } else {
