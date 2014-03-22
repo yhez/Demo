@@ -9,7 +9,7 @@ import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
 
 
@@ -25,13 +25,15 @@ public class Deposit extends BaseActivity {
         c = getIntent().getCharExtra("user", 'x');
         setTitle(getTitle() + " - Hello " + (c == 'U' ? "John" : "Lisa"));
         set(findViewById(R.id.fullscreen_content));
+        findViewById(R.id.fullscreen_content).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.toast(getString(R.string.tab_to_aprove), 3, Deposit.this);
+            }
+        });
+
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event){
-        Toast.toast(getString(R.string.tab_to_aprove), 3, this);
-        return super.onTouchEvent(event);
-    }
     @Override
     public void onResume() {
         super.onResume();
