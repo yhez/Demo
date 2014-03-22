@@ -3,7 +3,6 @@ package specular.systems.demo.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
 
 public class AfterSign extends BaseActivity {
@@ -13,7 +12,7 @@ public class AfterSign extends BaseActivity {
         char c = getIntent().getCharExtra("user",'x');
         setTitle(getTitle()+" - Hello "+(c=='U'?"John":"Lisa"));
         setContentView(R.layout.after_sign);
-        ((ImageView)findViewById(R.id.account)).setBackgroundResource(c=='U'?R.drawable.jhon:R.drawable.lisa);
+        findViewById(R.id.account).setBackgroundResource(c=='U'?R.drawable.jhon:R.drawable.lisa);
         set(findViewById(R.id.fullscreen_content));
     }
 

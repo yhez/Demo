@@ -13,5 +13,9 @@
     <string name="hint_pass">Online Password</string>
     <string name="sign_bt">Sign On</string>
     <string name="action_done">Action completed successfully and securely</string>
+    <string name="tab_to_aprove">Tap wearable to approve transaction</string>
+    <string name="tab_doesnt_mach">The wearable doesn\'t match</string><string name="sign_no_nfc">Wrong username or password
+Try using your wearable</string>
+    <string name="no_valid_user">Can\'t find a valid user on this wearable</string>
 
 </resources>

@@ -11,7 +11,6 @@ import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -62,16 +61,14 @@ public class WfDemo extends BaseActivity {
                     new keyDialog().show(getFragmentManager(),"gg");
                 }
             }else{
-                Log.e("nfcContent",new String(pvk.getPayload()));
-                Log.e("n",nfcContent+"");
                 if(kd!=null&&kd.getDialog()!=null)
                     kd.getDialog().cancel();
-                Toast.toast("Can't find a valid user on this wearable", 2, this);
+                Toast.toast(getString(R.string.no_valid_user), 2, this);
             }
         }
     }
     public void signOn(View v) {
-        Toast.toast("Wrong username or password\nTry using your wearable", 2, this);
+        Toast.toast(getString(R.string.sign_no_nfc), 2, this);
     }
 
     public class keyDialog extends DialogFragment {
