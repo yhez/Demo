@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:id="@+id/fullscreen_content"
-    android:fitsSystemWindows="true"
     tools:context="specular.systems.demo.app.Deposit">
 
     <ImageView

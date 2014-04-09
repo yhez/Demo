@@ -1,5 +1,6 @@
 package specular.systems.demo.app;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -17,15 +18,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class WfDemo extends BaseActivity {
+public class WfDemo extends Activity {
 
-
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus)
+            Splash.hide(getWindow());
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wf_demo);
-        final View contentView = findViewById(R.id.fullscreen_content);
-        set(contentView);
     }
     @Override
     public void onResume() {

@@ -2,13 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@android:color/white"
     tools:context="specular.systems.demo.app.WfDemo">
 
     <ImageView
         android:id="@+id/fullscreen_content"
-        android:scaleType="centerCrop"
+        android:scaleType="center"
         android:src="@drawable/for_demo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

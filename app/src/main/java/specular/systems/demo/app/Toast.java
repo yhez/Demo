@@ -56,4 +56,10 @@ public class Toast extends Activity {
         Intent i = new Intent(a,Toast.class);
         a.startActivity(i);
     }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus)
+            Splash.hide(getWindow());
+    }
 }

@@ -1,5 +1,6 @@
 package specular.systems.demo.app;
 
+import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -13,10 +14,15 @@ import android.view.View;
 import android.widget.ImageView;
 
 
-public class Deposit extends BaseActivity {
+public class Deposit extends Activity {
     char c;
     ImageView iv;
-
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus)
+            Splash.hide(getWindow());
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +30,6 @@ public class Deposit extends BaseActivity {
         iv = (ImageView) findViewById(R.id.sig);
         c = getIntent().getCharExtra("user", 'x');
         setTitle(getTitle() + " - Hello " + (c == 'U' ? "John" : "Lisa"));
-        set(findViewById(R.id.fullscreen_content));
         findViewById(R.id.fullscreen_content).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
