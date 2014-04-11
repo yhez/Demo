@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/fullscreen_content"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         android:src="@drawable/for_demo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,8 +18,8 @@
         android:orientation="vertical"
         android:background="@drawable/signon_module"
         android:layout_gravity="right"
-        android:layout_marginTop="26dp"
-        android:layout_marginRight="26dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginRight="52dp"
         android:layout_width="175dp"
         android:layout_height="160dp">
         <LinearLayout

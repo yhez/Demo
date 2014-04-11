@@ -14,6 +14,7 @@ public class Toast extends Activity {
     TextView v;
     static long tTime;
     static String msg;
+    static Activity caller;
     @Override
     public void onCreate(Bundle b){
         super.onCreate(b);
@@ -53,8 +54,14 @@ public class Toast extends Activity {
     public static void toast(String message,int time,Activity a){
         tTime = time*1000;
         msg = message;
-        Intent i = new Intent(a,Toast.class);
-        a.startActivity(i);
+        caller = a;
+        Intent i = new Intent(caller,Toast.class);
+        caller.startActivity(i);
+    }
+    @Override
+    public void onBackPressed(){
+        finish();
+        caller.finish();
     }
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {

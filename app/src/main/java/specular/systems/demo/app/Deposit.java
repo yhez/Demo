@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -30,13 +31,9 @@ public class Deposit extends Activity {
         iv = (ImageView) findViewById(R.id.sig);
         c = getIntent().getCharExtra("user", 'x');
         setTitle(getTitle() + " - Hello " + (c == 'U' ? "John" : "Lisa"));
-        findViewById(R.id.fullscreen_content).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.toast(getString(R.string.tab_to_aprove), 3, Deposit.this);
-            }
-        });
-
+    }
+    public void approve(View v){
+        Toast.toast(getString(R.string.tab_to_aprove), 3, Deposit.this);
     }
 
     @Override
@@ -72,6 +69,9 @@ public class Deposit extends Activity {
                     public void run() {
                         iv.setImageResource(R.drawable.sign);
                         ((AnimationDrawable) iv.getDrawable()).start();
+                        MediaPlayer mp = MediaPlayer.create(Deposit.this,R.raw.sound);
+                        mp.start();
+
                     }
                 }).start();
                 iv.postDelayed(new Runnable() {
@@ -80,6 +80,12 @@ public class Deposit extends Activity {
                         ((AnimationDrawable)iv.getDrawable()).stop();
                         iv.animate().alpha(0).setDuration(1000).start();
                         Toast.toast(getString(R.string.action_done), 6, Deposit.this);
+                        iv.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                finish();
+                            }
+                        },6000);
                     }
                 },3000);
             } else {
